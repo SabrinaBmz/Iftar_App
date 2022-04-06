@@ -14,3 +14,7 @@ Find the nearest Iftar place.
 This application will provide the user with the nearest Iftar place with all the details needed like exact address, contact information, time, and association name.
 ## Implementation technologies: 
 Flutter, Dart, API.
+## Solution Screens:
+### Home page:
+![Home page](https://user-images.githubusercontent.com/77940459/161999563-076abc5c-bdce-4d42-9f9d-6340f4b94e11.png)
+
