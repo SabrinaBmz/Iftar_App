@@ -9,9 +9,9 @@ Widget Location() {
         child: Card(
           semanticContainer: true,
           clipBehavior: Clip.antiAliasWithSaveLayer,
-          child: Image.network(
-            'https://placeimg.com/640/480/any',
-            fit: BoxFit.fill,
+          child: const Image(
+            image: AssetImage("assets/images/Alger.png"),
+            fit: BoxFit.cover,
           ),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10.0),

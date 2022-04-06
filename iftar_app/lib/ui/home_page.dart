@@ -212,7 +212,8 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                 ],
                               ),
-                              onPressed: () => print("it's pressed"),
+                              onPressed: () =>
+                                  Navigator.popAndPushNamed(context, "/login"),
                               style: ElevatedButton.styleFrom(
                                 primary:
                                     const Color.fromARGB(255, 251, 101, 66),

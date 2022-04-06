@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:iftar_app/ui/add_location_page.dart';
 import 'package:iftar_app/ui/home_page.dart';
+import 'package:iftar_app/ui/login_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,6 +18,8 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (_) => const HomePage(),
+        '/login': (_) => const Login(),
+        '/addLocation': (_) => const AddLocation(),
       },
     );
   }

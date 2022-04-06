@@ -1,0 +1,332 @@
+import 'package:flutter/material.dart';
+
+class LocationDetails extends StatefulWidget {
+  const LocationDetails({key}) : super(key: key);
+
+  @override
+  _LocationDetails createState() => _LocationDetails();
+}
+
+class _LocationDetails extends State<LocationDetails> {
+  Color _color = Color.fromARGB(220, 117, 218, 255);
+  int _capacity = 1;
+  void _groing() {
+    setState(() {
+      while (_capacity != 0) {
+        _capacity--;
+      }
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          //mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(top: 22.0),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Image.asset('assets/images/layer2.png'),
+                  Padding(
+                      padding: const EdgeInsets.only(top: 15.0),
+                      child: Image.asset('assets/images/group6.png')),
+                  Image.asset('assets/images/layer2.png')
+                ],
+              ),
+            ),
+            Center(
+              child: Text('مائدة الإفطار',
+                  style: TextStyle(
+                      color: Color.fromARGB(255, 55, 94, 151),
+                      fontSize: 35,
+                      fontFamily: "Changa",
+                      fontWeight: FontWeight.bold)),
+            ),
+            SizedBox(
+              height: 50,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(right: 15.0, top: 5),
+                      child: Text('الرحمة',
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 55, 94, 151),
+                            fontSize: 20,
+                            fontWeight: FontWeight.normal,
+                            fontFamily: "Changa",
+                          )),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 15),
+                      child: Text('19:15',
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 55, 94, 151),
+                            fontSize: 20,
+                            fontWeight: FontWeight.normal,
+                            fontFamily: "Changa",
+                          )),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 15),
+                      child: Text('$_capacity',
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 55, 94, 151),
+                            fontSize: 20,
+                            fontWeight: FontWeight.normal,
+                            fontFamily: "Changa",
+                          )),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 15),
+                      child: Text('الجزائر، الجزائر',
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 55, 94, 151),
+                            fontSize: 20,
+                            fontWeight: FontWeight.normal,
+                            fontFamily: "Changa",
+                          )),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 19.0),
+                      child: ElevatedButton(
+                        onPressed: () => {},
+                        child: Text(
+                          'اضغط هنا',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontFamily: "Changa",
+                          ),
+                        ),
+                        style: ElevatedButton.styleFrom(
+                          primary: Color.fromARGB(255, 251, 101, 66),
+                          onPrimary: Colors.white,
+                          elevation: 3,
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15.0)),
+                          minimumSize: Size(50, 35),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset('assets/images/bi_house_fill.png'),
+                      SizedBox(
+                        height: 30,
+                      ),
+                      Image.asset('assets/images/group5.png'),
+                      SizedBox(
+                        height: 30,
+                      ),
+                      Image.asset('assets/images/vector.png'),
+                      SizedBox(
+                        height: 30,
+                      ),
+                      Image.asset('assets/images/fluent_calendar.png'),
+                      SizedBox(
+                        height: 30,
+                      ),
+                      Image.asset('assets/images/vector1.png'),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(right: 8.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(right: 8.0),
+                        child: Text('إسم الجمعية',
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 55, 94, 151),
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: "Changa",
+                            )),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 16.0),
+                        child: Text('وقت الإفطار',
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 55, 94, 151),
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: "Changa",
+                            )),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 11.0),
+                        child: Text('الأماكن المتوفرة',
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 55, 94, 151),
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: "Changa",
+                            )),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 11.0),
+                        child: Text('العنوان',
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 55, 94, 151),
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: "Changa",
+                            )),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 15.0),
+                        child: Text('الرابط لخرائط غوغل',
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 55, 94, 151),
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: "Changa",
+                            )),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 100),
+            Center(
+              child: ElevatedButton(
+                onPressed: () => [_groing(), dialog()],
+                child: Text(
+                  'التحق بالمائدة',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                    fontFamily: "Changa",
+                  ),
+                ),
+                style: ElevatedButton.styleFrom(
+                  primary: Color.fromARGB(255, 251, 101, 66),
+                  onPrimary: Colors.white,
+                  elevation: 3,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15.0)),
+                  minimumSize: Size(50, 45),
+                ),
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+
+  dialog() {
+    if (_capacity != 0) {
+      showDialog(
+          context: context,
+          builder: (context) {
+            return AlertDialog(
+              //backgroundColor: Colors.blue,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(15.0))),
+              contentPadding:
+                  EdgeInsets.only(top: 30.0, bottom: 15, right: 20, left: 20),
+              content: Directionality(
+                textDirection: TextDirection.rtl,
+                child: Text(
+                  'رمضان مبارك، تقبل الله منا ومنكم صالح الأعمال والطاعات.',
+                  style: TextStyle(
+                      color: Color.fromARGB(255, 55, 94, 151),
+                      fontSize: 18,
+                      fontFamily: "Changa"),
+                ),
+              ),
+              actions: [
+                FlatButton(
+                    onPressed: () => {Navigator.of(context).pop()},
+                    child: Text(
+                      'شكرا',
+                      style: TextStyle(
+                          color: Color.fromARGB(255, 55, 94, 151),
+                          fontSize: 15,
+                          fontFamily: "Changa",
+                          fontWeight: FontWeight.bold),
+                    ))
+              ],
+            );
+          });
+    } else {
+      showDialog(
+          context: context,
+          builder: (context) {
+            return AlertDialog(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(15.0))),
+              contentPadding:
+                  EdgeInsets.only(top: 30.0, bottom: 15, right: 20, left: 20),
+              content: Directionality(
+                textDirection: TextDirection.rtl,
+                child: Text(
+                  'لا يوجد أماكن',
+                  style: TextStyle(
+                      color: Color.fromARGB(255, 55, 94, 151),
+                      fontSize: 18,
+                      fontFamily: "Changa"),
+                ),
+              ),
+              actions: [
+                FlatButton(
+                    onPressed: () => {Navigator.of(context).pop()},
+                    child: Text(
+                      'شكرا',
+                      style: TextStyle(
+                          color: Color.fromARGB(255, 55, 94, 151),
+                          fontSize: 15,
+                          fontFamily: "Changa",
+                          fontWeight: FontWeight.bold),
+                    ))
+              ],
+            );
+          });
+    }
+  }
+}
