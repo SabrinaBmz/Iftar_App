@@ -75,178 +75,161 @@ class _HomePageState extends State<HomePage> {
         textDirection: TextDirection.rtl,
         child: Scaffold(
           backgroundColor: const Color.fromARGB(255, 248, 248, 255),
-          body: Padding(
-            padding: const EdgeInsets.all(3.0),
-            child: FutureBuilder(
-              future: getData(),
-              builder: (context, snapshot) {
-                if (snapshot.connectionState == ConnectionState.done) {
-                  return Padding(
-                    padding: const EdgeInsets.all(5.0),
-                    child: ListView(
-                      //mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const Text('مواقيت الصلاة',
-                            style: TextStyle(
-                              fontFamily: "Changa",
-                              color: Color.fromARGB(255, 55, 94, 151),
-                              fontWeight: FontWeight.bold,
-                              fontSize: 28,
-                            )),
-                        Text('${data!.hijriDate} الموافق ل ${data!.date}',
-                            style: const TextStyle(
-                              fontFamily: "Changa",
-                              color: Color.fromARGB(255, 55, 94, 151),
-                              fontWeight: FontWeight.bold,
-                              fontSize: 14,
-                            )),
-                        Padding(
-                          padding: const EdgeInsets.all(1.0),
-                          child: FutureBuilder(
-                              future: getData(),
-                              builder: (context, snapshot) {
-                                if (snapshot.connectionState ==
-                                    ConnectionState.done) {
-                                  return Column(
-                                    children: [
-                                      PrayerTimeWidget(
-                                          prayername!, prayer!, color!, icon!),
-                                      PrayerTimeWidget(prayername1!, prayer1!,
-                                          color1!, icon1!),
-                                    ],
-                                  );
-                                }
+          body: Container(
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("assets/images/background.png"),
+                fit: BoxFit.cover,
+              ),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.only(top: 120.0),
+              child: Padding(
+                padding: const EdgeInsets.only(left: 8.0),
+                child: Padding(
+                  padding: const EdgeInsets.only(right: 8.0),
+                  child: FutureBuilder(
+                    future: getData(),
+                    builder: (context, snapshot) {
+                      if (snapshot.connectionState == ConnectionState.done) {
+                        return ListView(
+                          //mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const Text('مواقيت الصلاة',
+                                style: TextStyle(
+                                  fontFamily: "Changa",
+                                  color: Color.fromARGB(255, 55, 94, 151),
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 28,
+                                )),
+                            Text('${data!.hijriDate} الموافق ل ${data!.date}',
+                                style: const TextStyle(
+                                  fontFamily: "Changa",
+                                  color: Color.fromARGB(255, 55, 94, 151),
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 14,
+                                )),
+                            Padding(
+                              padding: const EdgeInsets.all(1.0),
+                              child: FutureBuilder(
+                                  future: getData(),
+                                  builder: (context, snapshot) {
+                                    if (snapshot.connectionState ==
+                                        ConnectionState.done) {
+                                      return Column(
+                                        children: [
+                                          PrayerTimeWidget(prayername!, prayer!,
+                                              color!, icon!),
+                                          PrayerTimeWidget(prayername1!,
+                                              prayer1!, color1!, icon1!),
+                                        ],
+                                      );
+                                    }
 
-                                return Container();
-                              }),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(2.0),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              const Text('موائد الإفطار حاليا',
-                                  style: TextStyle(
-                                    fontFamily: "Changa",
-                                    color: Color.fromARGB(255, 55, 94, 151),
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 28,
-                                  )),
-                              ElevatedButton(
-                                onPressed: () => print("it's pressed"),
-                                child: const Text('الكل',
-                                    style: TextStyle(
-                                      fontFamily: "Changa",
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 22,
-                                    )), // <-- Text
+                                    return Container();
+                                  }),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(2.0),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  const Text('موائد الإفطار حاليا',
+                                      style: TextStyle(
+                                        fontFamily: "Changa",
+                                        color: Color.fromARGB(255, 55, 94, 151),
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 28,
+                                      )),
+                                  ElevatedButton(
+                                    onPressed: () => print("it's pressed"),
+                                    child: const Text('الكل',
+                                        style: TextStyle(
+                                          fontFamily: "Changa",
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 22,
+                                        )), // <-- Text
 
-                                style: ElevatedButton.styleFrom(
-                                  primary:
-                                      const Color.fromARGB(255, 55, 94, 151),
-                                  onPrimary: Colors.white,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(18.0),
+                                    style: ElevatedButton.styleFrom(
+                                      primary: const Color.fromARGB(
+                                          255, 251, 101, 66),
+                                      onPrimary: Colors.white,
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(18.0),
+                                      ),
+                                    ),
                                   ),
+                                ],
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(2.0),
+                              child: FutureBuilder(
+                                  future: getData(),
+                                  builder: (context, snapshot) {
+                                    if (snapshot.connectionState ==
+                                        ConnectionState.done) {
+                                      return Column(
+                                        children: [
+                                          LocationListWidget(),
+                                        ],
+                                      );
+                                    }
+
+                                    return Container();
+                                  }),
+                            ),
+                            const Text('الجمعيات الخيرية والتطوعية',
+                                style: TextStyle(
+                                  fontFamily: "Changa",
+                                  color: Color.fromARGB(255, 55, 94, 151),
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 28,
+                                )),
+                            ElevatedButton(
+                              child: Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: const [
+                                  Icon(
+                                    // <-- Icon
+                                    IconData(0xf52c,
+                                        fontFamily: 'MaterialIcons'),
+                                    size: 24.0,
+                                  ),
+
+                                  Text(' نشر مائدة إفطار',
+                                      style: TextStyle(
+                                        fontFamily: "Changa",
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 24,
+                                      )), // <-- Text
+                                  SizedBox(
+                                    width: 5,
+                                  ),
+                                ],
+                              ),
+                              onPressed: () => print("it's pressed"),
+                              style: ElevatedButton.styleFrom(
+                                primary:
+                                    const Color.fromARGB(255, 251, 101, 66),
+                                onPrimary: Colors.white,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(18.0),
                                 ),
                               ),
-                            ],
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(2.0),
-                          child: FutureBuilder(
-                              future: getData(),
-                              builder: (context, snapshot) {
-                                if (snapshot.connectionState ==
-                                    ConnectionState.done) {
-                                  return Column(
-                                    children: [
-                                      LocationListWidget(),
-                                    ],
-                                  );
-                                }
-
-                                return Container();
-                              }),
-                        ),
-                        const Text('الجمعيات الخيرية والتطوعية',
-                            style: TextStyle(
-                              fontFamily: "Changa",
-                              color: Color.fromARGB(255, 55, 94, 151),
-                              fontWeight: FontWeight.bold,
-                              fontSize: 28,
-                            )),
-                        ElevatedButton(
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: const [
-                              Icon(
-                                // <-- Icon
-                                IconData(0xf52c, fontFamily: 'MaterialIcons'),
-                                size: 24.0,
-                              ),
-
-                              Text(' نشر مائدة إفطار',
-                                  style: TextStyle(
-                                    fontFamily: "Changa",
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 24,
-                                  )), // <-- Text
-                              SizedBox(
-                                width: 5,
-                              ),
-                            ],
-                          ),
-                          onPressed: () => print("it's pressed"),
-                          style: ElevatedButton.styleFrom(
-                            primary: const Color.fromARGB(255, 251, 101, 66),
-                            onPrimary: Colors.white,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(18.0),
                             ),
-                          ),
-                        ),
-                        const SizedBox(height: 5.0),
-                        ElevatedButton(
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: const [
-                              Icon(
-                                // <-- Icon
-                                IconData(0xe3b2, fontFamily: 'MaterialIcons'),
-                                size: 25.0,
-                              ),
-
-                              Text(' تسجيل الجمعية',
-                                  style: TextStyle(
-                                    fontFamily: "Changa",
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 24,
-                                  )), // <-- Text
-                              SizedBox(
-                                width: 5,
-                              ),
-                            ],
-                          ),
-                          onPressed: () => print("it's pressed"),
-                          style: ElevatedButton.styleFrom(
-                            primary: const Color.fromARGB(255, 55, 94, 151),
-                            onPrimary: Colors.white,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(18.0),
-                            ),
-                          ),
-                        )
-                      ],
-                    ),
-                  );
-                }
-                return Container();
-              },
+                          ],
+                        );
+                      }
+                      return Container();
+                    },
+                  ),
+                ),
+              ),
             ),
           ),
         ));
