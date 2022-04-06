@@ -16,5 +16,5 @@ This application will provide the user with the nearest Iftar place with all the
 Flutter, Dart, API.
 ## Solution Screens:
 ### Home page:
-![Home page](https://user-images.githubusercontent.com/77940459/161999563-076abc5c-bdce-4d42-9f9d-6340f4b94e11.png = 250x250)
+![Home page](https://user-images.githubusercontent.com/77940459/161999563-076abc5c-bdce-4d42-9f9d-6340f4b94e11.png |width=100)
 
